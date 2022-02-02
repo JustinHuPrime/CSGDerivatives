@@ -1,0 +1,36 @@
+\documentclass[letterpaper,12pt,draft]{article}
+
+\begin{document}
+\title{Context Sensitive Recognition with Derivatives}
+\author{Justin Hu}
+
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+
+\section{Introduction}
+
+\section{Previous Work}
+
+\subsection{Brzozowski's Derivative}
+
+\subsection{Derivatives of Context Free Languages}
+
+\section{Derivatives of Context Sensitive Grammars}
+
+In contrast to context free languages, context sensitive languages cannot be represented as recursive regular expressions. We decided to implement the recognizer in Typed Racket.
+
+\subsection{Representing Context Sensitive Grammars}
+
+Context sensitive grammars are defined as a tuple \(G = N, \Sigma, P, S\), where \(N\) is the set of nonterminal symbols, \(\Sigma\) is the set of terminal symbols, \(P\) is the set of production rules, and \(S\) is the starting symbol (usually a non-terminal symbol). A production rule has the form \(\alpha R \beta \to \alpha p \beta\), where \(\alpha\) and \(\beta\) are possibly-empty strings of terminals or non-terminals, where \(R\) is a non-terminal symbol, and \(p\) is a non-empty string of terminals or non-terminals. Finally, we represent nonterminal symbols as Racket symbols and terminal symbols as Racket strings.
+
+\subsection{Definition of the Derivative}
+
+Derivation of a context sensitive grammar is defined as a function from a token, a grammar, and an expansion to a list of pairs of grammars and expansions. If the expansion is empty, then there does not exist a derivative. If the expansion is not empty, recursively apply expansions to the first nonterminal until each expansion starts with a nonterminal, and discard the expansions that don't start with the token the derivative is with respect to.
+
+\subsection{Implementing the Derivative}
+
+\section{Conclusion}
+
+\end{document}
